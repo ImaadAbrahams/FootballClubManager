@@ -27,6 +27,25 @@ def add_player():
     
     return render_template("add_player.html")
 
+@app.route("/delete-player/<int:id>")
+def delete_player(id):
+    player = Player.query.get_or_404(id)
+    db.session.delete(player)
+    db.session.commit()
+    return redirect("/players")
+
+@app.route("/edit-player/<int:id>", methods = ["GET", "POST"])
+def edit_player(id):
+    player = Player.query.get_or_404(id)
+    if request.method == "POST":
+        player.name = request.form["name"]
+        player.age = request.form["age"]
+        player.position = request.form["position"]
+        db.session.commit()
+        return redirect("/players")
+    return render_template("edit_player.html", player=player)
+
+
 @app.route("/players")
 def view_players():
     players = Player.query.all()

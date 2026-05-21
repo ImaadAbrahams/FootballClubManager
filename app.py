@@ -12,7 +12,7 @@ players = []
 def home():
     return render_template("home.html")
 
-@app.route("/add_player", methods=["GET", "POST"])
+@app.route("/add-player", methods=["GET", "POST"])
 def add_player():
     if request.method == "POST":
         new_player = Player(

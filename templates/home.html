@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Football Club Manager</title>
-</head>
-<body>
-    <h1>Football Club Manager</h1>
+{% extends "base.html" %}
 
-    <a href="/add_player">Add Player</a><br>
-    <a href="/players">View Players</a>
-</body>
-</html>
+{% block content %}
+
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+
+    <div class="container-fluid py-3">
+
+        <h1 class="display-5 fw-bold">
+            Football Club Manager
+        </h1>
+
+        <p class="col-md-8 fs-5">
+            Manage players, matches, attendance, and club operations.
+        </p>
+
+        <a href="/players" class="btn btn-primary btn-lg">
+            View Players
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

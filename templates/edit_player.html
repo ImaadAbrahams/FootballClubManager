@@ -1,46 +1,70 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>Edit Player</title>
-</head>
+{% block content %}
 
-<body>
+<div class="card shadow-sm">
 
-    <h1>Edit Player</h1>
+    <div class="card-body">
 
-    <form method="POST">
+        <h1 class="mb-4">
+            Edit Player
+        </h1>
 
-        <label>Name:</label><br>
+        <form method="POST">
 
-        <input
-            type="text"
-            name="name"
-            value="{{ player.name }}"
-        ><br><br>
+            <div class="mb-3">
 
-        <label>Age:</label><br>
+                <label class="form-label">
+                    Name
+                </label>
 
-        <input
-            type="number"
-            name="age"
-            value="{{ player.age }}"
-        ><br><br>
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    value="{{ player.name }}"
+                    required>
 
-        <label>Position:</label><br>
+            </div>
 
-        <input
-            type="text"
-            name="position"
-            value="{{ player.position }}"
-        ><br><br>
+            <div class="mb-3">
 
-        <button type="submit">
-            Update Player
-        </button>
+                <label class="form-label">
+                    Age
+                </label>
 
-    </form>
+                <input
+                    type="number"
+                    name="age"
+                    class="form-control"
+                    value="{{ player.age }}"
+                    required>
 
-</body>
+            </div>
 
-</html>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Position
+                </label>
+
+                <input
+                    type="text"
+                    name="position"
+                    class="form-control"
+                    value="{{ player.position }}"
+                    required>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Update Player
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
